@@ -1,0 +1,464 @@
+import React, { Component } from "react";
+
+// import './components.min.css';
+// import './layout.min.css';
+//import '../../assets/global/plugins/font-awesome/css/font-awesome.min.css';
+//import '../../assets/global/plugins/bootstrap/css/bootstrap.min.css';
+import '../../assets/frontend/layout/css/style.css';
+//import '../../assets/global/plugins/select2/select2.css';
+import '../../assets/global/css/components.css';
+import '../../assets/global/css/plugins.css';
+import '../../assets/global/plugins/jquery-file-upload/css/jquery.fileupload.css';
+import './interview.css';
+
+
+class Inteview extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        activeBlock1 : 3,
+        activeBlock2 : 3
+    };
+    this.switchBlock1 = this.switchBlock1.bind(this);
+    this.switchBlock2 = this.switchBlock2.bind(this);
+  }
+  switchBlock1(res) {
+    //this.setState({activeBlock1: res})
+  }
+  switchBlock2(res) {
+    //this.setState({activeBlock2: res})
+  }
+  render() {
+    return (
+      <div className="row">
+        <div className="col-md-12">
+            <div className="portlet box blue" id="form_wizard_1">
+                <div className="portlet-body form">
+                    <form action="#" className="form-horizontal" id="submit_form" method="POST">
+                        <div className="form-wizard">
+                            <div className="form-body">
+                                <ul className="nav nav-pills nav-justified steps">
+                                    <li>
+                                        <a href="#tab1" data-toggle="tab" className="step">
+                                        <span className="number">
+                                        1 </span>
+                                        <span className="desc">
+                                        <i className="fa fa-check"></i> Account Setup </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab2" data-toggle="tab" className="step">
+                                        <span className="number">
+                                        2 </span>
+                                        <span className="desc">
+                                        <i className="fa fa-check"></i> Profile Setup </span>
+                                        </a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="#tab3" data-toggle="tab" className="step">
+                                        <span className="number">
+                                        3 </span>
+                                        <span className="desc">
+                                        <i className="fa fa-check"></i> Confirm </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div id="bar" className="progress progress-striped" role="progressbar">
+                                    <div className="progress-bar progress-bar-success">
+                                    </div>
+                                </div>
+                                <div className="tab-content">
+                                    <div className="alert alert-danger display-none">
+                                        <button className="close" data-dismiss="alert"></button>
+                                        You have some form errors. Please check below.
+                                    </div>
+                                    <div className="alert alert-success display-none">
+                                        <button className="close" data-dismiss="alert"></button>
+                                        Your form validation is successful!
+                                    </div>
+                                    <div className="tab-pane active" id="tab1">
+                                        <h3 className="block">About the Candidate:</h3>
+                                        <div className={`form-group ${this.state.activeBlock1==3 ? "active" : ""}`} id="enter-or-upload">
+                                            <a className="btn green new-btn" onClick={this.switchBlock1(2)}>
+                                                Upload RESUME
+                                            </a>
+                                            <a className="btn green new-btn" onClick={this.switchBlock1(1)}>
+                                                Enter LINKEDIN ACCOUNT LINK
+                                            </a>
+                                        </div>
+                                        <div className={`form-group ${this.state.activeBlock1==1 ? "active" : ""}`} id="enter-profile">
+                                            <label className="control-label col-md-3">Username <span className="required">
+                                            * </span>
+                                            </label>
+                                            <div className="col-md-4">
+                                                <input type="text" className="form-control" name="username"/>
+                                                <span className="help-block">
+                                                Provide your username </span>
+                                            </div>
+                                            <div className="col-md-5"></div>
+                                            <a className="btn green new-btn-back" onClick={this.switchBlock1(3)}>
+                                                Back
+                                            </a>
+                                        </div>
+                                        <div className={`form-group ${this.state.activeBlock1==2 ? "active" : ""}`} id="upload-profile">
+                                            <a className="btn green new-btn-back" onClick={this.switchBlock1(3)}>
+                                                Back
+                                            </a>
+                                        </div>   
+                                         
+                                        <h3 className="block">About the Position:</h3>
+                                        <div className="form-group">
+                                            <label className="control-label col-md-3">TYPE THE POSITION TITLE <span className="required">
+                                            * </span>
+                                            </label>
+                                            <div className="col-md-4">
+                                                <input type="text" className="form-control" name="username"/>
+                                                <span className="help-block">
+                                                Provide your position title </span>
+                                            </div>
+                                            
+                                        </div>
+                                        <div className="form-group">
+                                            <label className="control-label col-md-3">TYPE THE INTERVIEWER NAME AND POSITION<span className="required">
+                                            * </span>
+                                            </label>
+                                            <div className="col-md-4">
+                                                <input type="text" className="form-control" name="username"/>
+                                                <span className="help-block">
+                                                Provide your interviewer name and position </span>
+                                            </div>
+                                            
+                                        </div>
+                                        <div className={`form-group ${this.state.activeBlock1==2 ? "active" : ""}`} id="enter-or-upload-second">
+                                            <a className="btn green new-btn" onClick={this.switchBlock2(2)}>
+                                                UPLOAD JOB DESCRIPTION
+                                            </a>
+                                            <a className="btn green new-btn" onClick={this.switchBlock2(1)}>
+                                                TYPE JOB DESCRIPTION
+                                            </a>
+                                        </div>
+                                        <div className={`form-group ${this.state.activeBlock2==1 ? "active" : ""}`} id="enter-profile-second">
+                                            <label className="control-label col-md-3">JOB DESCRIPTION <span className="required">
+                                            * </span>
+                                            </label>
+                                            <div className="col-md-4">
+                                                <input type="text" className="form-control" name="username"/>
+                                                <span className="help-block">
+                                                Provide your job description </span>
+                                            </div>
+                                            <div className="col-md-5"></div>
+                                            <a className="btn green new-btn-back" onClick={this.switchBlock2(3)}>
+                                                Back
+                                            </a>
+                                        </div>
+                                        <div className={`form-group ${this.state.activeBlock1==1 ? "active" : ""}`} id="upload-profile-second">
+                                            <a className="btn green new-btn-back" onClick={this.switchBlock2(3)}>
+                                                Back
+                                            </a>
+                                        </div>    
+                                    </div>
+                                    
+                                    <div className="tab-pane" id="tab2">
+                                        <h3 className="block">Select the type of interview</h3>
+                                        <div className="form-group">
+                                            <div href="#" className="btn green new-btn">
+                                                Audio
+                                            </div>
+                                            <div href="#" className="btn green new-btn">
+                                                Media
+                                            </div>
+                                        </div>                                           
+                                        <h3 className="block">Select the duration of the interview:</h3>                                  
+                                        <div className="form-group">
+                                            <label className="control-label col-md-3">select duration in min</label>
+                                            <div className="col-md-4">
+                                                <select name="duration" id="duration_list" className="form-control">
+                                                    <option value=""></option>
+                                                    <option value="">1</option>
+                                                    <option value="">2</option>
+                                                    <option value="">3</option>
+                                                    <option value="">4</option>
+                                                    <option value="">5</option>
+                                                    <option value="">6</option>
+                                                    <option value="">7</option>
+                                                    <option value="">8</option>
+                                                    <option value="">9</option>
+                                                    <option value="">10</option>                                                    
+                                                </select>
+                                            </div>
+                                        </div>   
+                                        <h3 className="block">Select the number of questions:</h3>                                        
+                                        <div className="form-group">
+                                            <label className="control-label col-md-3">select the number of questions</label>
+                                            <div className="col-md-4">
+                                                <select name="question" id="question_list" className="form-control">
+                                                    <option value=""></option>
+                                                    <option value="">1</option>
+                                                    <option value="">2</option>
+                                                    <option value="">3</option>
+                                                    <option value="">4</option>
+                                                    <option value="">5</option>
+                                                    <option value="">6</option>
+                                                    <option value="">7</option>
+                                                    <option value="">8</option>
+                                                    <option value="">9</option>
+                                                    <option value="">10</option>                                                    
+                                                </select>
+                                            </div>
+                                        </div>  
+                                        <div className="portlet box red">
+                                            <div className="portlet-title">
+                                                <div className="caption">
+                                                    <i className="fa fa-cogs"></i>Questions
+                                                </div>
+                                                <div className="tools">
+                                                    <a  className="collapse" data-original-title="" title="">
+                                                    </a>
+                                                    <a href="#portlet-config" data-toggle="modal" className="config" data-original-title="" title="">
+                                                    </a>
+                                                    <a  className="reload" data-original-title="" title="">
+                                                    </a>
+                                                    <a  className="remove" data-original-title="" title="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div className="portlet-body" style={{display: "block"}}>
+                                                <div className="table-scrollable">
+                                                    <table className="table table-hover">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>
+                                                             Question#
+                                                        </th>
+                                                        <th>
+                                                             Type
+                                                        </th>
+                                                        <th>
+                                                             Edit question
+                                                        </th>
+                                                        <th>
+                                                             Weighting
+                                                        </th>                                                        
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>
+                                                             1
+                                                        </td>
+                                                        <td>
+                                                             System
+                                                        </td>
+                                                        <td>
+                                                             -
+                                                        </td>
+                                                        <td>
+                                                             10%
+                                                        </td>                                                        
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                             1
+                                                        </td>
+                                                        <td>
+                                                             System
+                                                        </td>
+                                                        <td>
+                                                             -
+                                                        </td>
+                                                        <td>
+                                                             10%
+                                                        </td>                                                        
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                             1
+                                                        </td>
+                                                        <td>
+                                                             System
+                                                        </td>
+                                                        <td>
+                                                             -
+                                                        </td>
+                                                        <td>
+                                                             10%
+                                                        </td>                                                        
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                             1
+                                                        </td>
+                                                        <td>
+                                                             System
+                                                        </td>
+                                                        <td>
+                                                             -
+                                                        </td>
+                                                        <td>
+                                                             10%
+                                                        </td>                                                        
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                             1
+                                                        </td>
+                                                        <td>
+                                                             System
+                                                        </td>
+                                                        <td>
+                                                             -
+                                                        </td>
+                                                        <td>
+                                                             10%
+                                                        </td>                                                        
+                                                    </tr>
+                                                    </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        <h3 className="block">Select the avatar</h3>   
+                                        <div className="row">
+                                            <ul className="avatar-list">
+                                                <li className="active"><a href="#"><img src="./assets/img/img1.jpg"/></a></li>
+                                                <li><a href="#"><img src="./assets/img/img1.jpg"/></a></li>
+                                                <li><a href="#"><img src="./assets/img/img1.jpg"/></a></li>
+                                                <li><a href="#"><img src="./assets/img/img1.jpg"/></a></li>
+                                            </ul>
+                                        </div>
+                                                                          
+                                    </div>   
+                                    <div className="tab-pane" id="tab3">
+                                        <h3 className="block">Confirm your account</h3>
+                                        <h4 className="form-section">Account</h4>
+                                        <div className="form-group">
+                                            <label className="control-label col-md-3">Username:</label>
+                                            <div className="col-md-4">
+                                                <p className="form-control-static" data-display="username">
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div className="form-group">
+                                            <label className="control-label col-md-3">Email:</label>
+                                            <div className="col-md-4">
+                                                <p className="form-control-static" data-display="email">
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <h4 className="form-section">Profile</h4>
+                                        <div className="form-group">
+                                            <label className="control-label col-md-3">Fullname:</label>
+                                            <div className="col-md-4">
+                                                <p className="form-control-static" data-display="fullname">
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div className="form-group">
+                                            <label className="control-label col-md-3">Gender:</label>
+                                            <div className="col-md-4">
+                                                <p className="form-control-static" data-display="gender">
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div className="form-group">
+                                            <label className="control-label col-md-3">Phone:</label>
+                                            <div className="col-md-4">
+                                                <p className="form-control-static" data-display="phone">
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div className="form-group">
+                                            <label className="control-label col-md-3">Address:</label>
+                                            <div className="col-md-4">
+                                                <p className="form-control-static" data-display="address">
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div className="form-group">
+                                            <label className="control-label col-md-3">City/Town:</label>
+                                            <div className="col-md-4">
+                                                <p className="form-control-static" data-display="city">
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div className="form-group">
+                                            <label className="control-label col-md-3">Country:</label>
+                                            <div className="col-md-4">
+                                                <p className="form-control-static" data-display="country">
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div className="form-group">
+                                            <label className="control-label col-md-3">Remarks:</label>
+                                            <div className="col-md-4">
+                                                <p className="form-control-static" data-display="remarks">
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <h4 className="form-section">Billing</h4>
+                                        <div className="form-group">
+                                            <label className="control-label col-md-3">Card Holder Name:</label>
+                                            <div className="col-md-4">
+                                                <p className="form-control-static" data-display="card_name">
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div className="form-group">
+                                            <label className="control-label col-md-3">Card Number:</label>
+                                            <div className="col-md-4">
+                                                <p className="form-control-static" data-display="card_number">
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div className="form-group">
+                                            <label className="control-label col-md-3">CVC:</label>
+                                            <div className="col-md-4">
+                                                <p className="form-control-static" data-display="card_cvc">
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div className="form-group">
+                                            <label className="control-label col-md-3">Expiration:</label>
+                                            <div className="col-md-4">
+                                                <p className="form-control-static" data-display="card_expiry_date">
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div className="form-group">
+                                            <label className="control-label col-md-3">Payment Options:</label>
+                                            <div className="col-md-4">
+                                                <p className="form-control-static" data-display="payment[]">
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>                                 
+                                </div>
+                            </div>
+                            <div className="form-actions">
+                                <div className="row">
+                                    <div className="col-md-offset-3 col-md-9">
+                                        <a  className="btn blue new-btn-blue">
+                                        Save <i className="m-icon-swapright m-icon-white"></i>
+                                        </a>
+                                        <a  className="btn default button-previous new-btn-blue">
+                                        <i className="m-icon-swapleft"></i> Back </a>
+                                        <a  className="btn blue button-next new-btn-blue">
+                                        Next <i className="m-icon-swapright m-icon-white"></i>
+                                        </a>
+                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    )
+  }
+}
+
+export default Inteview;

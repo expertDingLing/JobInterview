@@ -1,0 +1,224 @@
+.big-div{
+    display:flex; 
+    justify-content:center; 
+    margin-top:70px;
+    padding: 20px 0;
+    background: gray;
+}
+.left-sub-div{
+    border-top-left-radius: 30px !important;
+    border-bottom-left-radius: 30px !important;
+    background-color:white;
+}
+.prefix-company{
+    color:#2f5496;
+    margin-top:10px;
+}
+.subfix-name{
+    color:black;
+}
+.first-title{
+    text-align: center;
+    color:#2f5496;
+    margin-top:50px;
+}
+.first-hr{
+    width: 50px;
+    border-color: #2f5496;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom:50px;
+}
+.social-icons{
+    display:flex; 
+    justify-content: center;
+    margin-bottom:50px
+}
+.social-li{
+    margin:10px;
+}
+.above-body{
+    text-align: center;
+}
+.form-body{
+    margin-bottom:75px;
+}
+.right-body{
+    margin-bottom:30px;
+}
+.btn_suc{
+    width:270px;
+    margin:auto !important;
+    margin-top:5px !important;
+}
+.a-href{
+    display:flex; 
+    justify-content:center;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+.remember{
+    margin-right:50px;
+}
+.forgot{
+    margin-left:50px;
+}
+.first-sign-in{
+    display:block;
+    margin:auto;
+    margin-bottom: 85px !important;
+    border-radius: 25px !important;
+    width:150px;
+}
+.right-sub-div{
+    border-top-right-radius: 30px !important;
+    border-bottom-right-radius: 30px !important;
+    background-color:#8eaadb !important;
+}
+.hellof{
+    text-align: center;
+    color:white;
+    margin-top:200px;
+}
+.second-hr{
+    width: 50px;
+    border-color: white;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom:50px;
+}
+.complex{
+    color:white;
+    text-align:center;
+}
+.second-sign-in{
+    display:block;
+    margin:auto;
+    border-radius: 20px !important;
+    width:150px;
+    border-color:white !important;
+}
+.form-group.form-md-line-input{
+    position: relative;
+    margin: 0 0 35px;
+    padding-top: 20px;
+}
+.form-group.form-md-line-input.has-success .form-control{
+    border-bottom: 1px solid #222232d4;
+}
+.form-group.form-md-line-input .form-control{
+    background: 0 0;
+    border-radius: 5px !important;
+    border-bottom: 1px solid #c2cad8;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    color: #555;
+    box-shadow: none;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 14px;
+}
+.form-control{
+    outline: 0!important;
+}
+.btn, .form-control{
+    box-shadow: none!important;
+}
+.form-group.form-md-line-input.form-md-floating-label .form-control~label{
+    margin-left: 8px;
+    font-size: 16px;
+    top: 25px;
+    transition: .2s ease all;
+    color: #999;
+}
+.form-group.form-md-line-input .form-control~label{
+    margin-bottom: 0;
+}
+.form-group.form-md-line-input .form-control~label{
+    width: 95%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+.form-group.form-md-line-input .form-control~label{
+    opacity: 1;
+}
+label{
+    font-weight: 400;
+}
+.form-group.form-md-line-input .form-control~.form-control-focus:after, .form-group.form-md-line-input .form-control~label:after{
+    content: '';
+    position: absolute;
+    z-index: 5;
+    bottom: 0;
+    left: 50%;
+    height: 2px;
+    width: 0;
+    visibility: hidden;
+    transition: .2s ease all;
+}
+.btn.green:not(.btn-outline){
+    color: #FFF;
+    background-color: #1bbc9b;
+    border-color: #1bbc9b;
+    height: 35px;
+}
+/* .social-icons li:hover>a{
+    background: url(./social/facebook.png);
+} */
+.social-icon-color:hover{
+    opacity: 1;
+}
+.social-icons li>a{
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    width: 28px;
+    height: 28px;
+    display: block;
+    background-position: 0 0;
+    transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+}
+.social-icons li{
+    float: left;
+    display: inline;
+    list-style: none;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    text-indent: -9999px;
+}
+.social-icons li .facebook{
+    background: url(./social/facebook.png);
+}
+.social-icons li .linkedin{
+    background: url(./social/linkedin.png);
+}
+.social-icons li .googleplus{
+    background: url(./social/googleplus.png);
+}
+
+@media screen and (max-width:662px){
+    .big-div {
+        flex-direction: column;
+    }
+    .left-sub-div {
+        border-top-left-radius: 30px !important;
+        border-top-right-radius: 30px !important;
+        border-bottom-left-radius: 0 !important;
+    }
+    .right-sub-div {
+        border-bottom-left-radius: 30px !important;
+        border-bottom-right-radius: 30px !important;
+        border-top-right-radius: 0 !important;
+    }
+}
